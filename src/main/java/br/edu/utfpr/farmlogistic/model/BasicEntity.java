@@ -15,12 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BasicEntity implements Serializable {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id")
-    // private Long id;
     @Id
-    // @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID id;
 
     public BasicEntity() {

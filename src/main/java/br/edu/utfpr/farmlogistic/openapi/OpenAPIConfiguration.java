@@ -15,10 +15,10 @@ import io.swagger.v3.oas.annotations.servers.Server;
 // Configurações gerais da API
 @OpenAPIDefinition(
   info =@Info(
-    title = "ToDo API",
+    title = "Farm API",
     version = "${api.version}",
     contact = @Contact(
-      name = "Ricardo Sobjak", email = "ricardosobjak@utfpr.edu.br", url = "https://portal.utfpr.edu.br"
+      name = "Julia Tluszcz", email = "juliatluszcz@alunos.utfpr.edu.br", url = "https://portal.utfpr.edu.br"
     ),
     license = @License(
       name = "Apache 2.0", url = "https://www.apache.org/licenses/LICENSE-2.0"

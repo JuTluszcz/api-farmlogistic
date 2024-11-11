@@ -14,12 +14,12 @@ public class Message {
         this.message = message;
     }
 
-    /**
-     * Cria um objeto Res contendo uma mensagem.
-     * 
-     * @param message
-     * @return Res
-     */
+    
+        //Cria um objeto Res contendo uma mensagem.
+      
+        //@param message
+        //@return Res
+     
     public static Message build(String message) {
         return new Message(message);
     }

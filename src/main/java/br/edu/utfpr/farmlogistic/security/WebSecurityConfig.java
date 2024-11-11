@@ -38,11 +38,7 @@ public class WebSecurityConfig {
         http = http
                 .csrf(AbstractHttpConfigurer::disable) // Disable CSRF
                 .cors(Customizer.withDefaults()) // Enable CORS
-                .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // Set
-                                                                                                                     // session
-                                                                                                                     // management
-                                                                                                                     // to
-                                                                                                                     // stateless
+                .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); 
 
         // Set unauthorized requests exception handler
         http = http
@@ -82,7 +78,6 @@ public class WebSecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-    // Used by Spring Security if CORS is enabled.
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
@@ -95,30 +90,6 @@ public class WebSecurityConfig {
         return source;
     }
 
-    // @Bean // Ignora URL's específicas
-    // public WebSecurityCustomizer webSecurityCustomizer() throws Exception {
-    // return web -> web.ignoring().requestMatchers("/auth");
-    // }
 
-    // Used by Spring Security if CORS is enabled.
-    /*
-     * @Bean
-     * public CorsFilter corsFilter() {
-     * UrlBasedCorsConfigurationSource source = new
-     * UrlBasedCorsConfigurationSource();
-     * CorsConfiguration config = new CorsConfiguration();
-     * 
-     * // config.setAllowCredentials(true);
-     * config.addAllowedOrigin("*");
-     * config.addAllowedHeader("*");
-     * config.addAllowedMethod("*");
-     * source.registerCorsConfiguration("/**", config);
-     * 
-     * System.out.println("-------------");
-     * System.out.println(config);
-     * 
-     * return new CorsFilter(source);
-     * }
-     */
 }
 

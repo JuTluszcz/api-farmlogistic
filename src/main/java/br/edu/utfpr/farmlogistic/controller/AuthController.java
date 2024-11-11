@@ -66,7 +66,6 @@ public class AuthController {
             claims.put("id", user.getId().toString());
             claims.put("username", body.getUsername());
 
-            // var now1 = LocalDateTime.now(ZoneId.of("UTC"));
             var now = Instant.now().atZone(ZoneId.of("UTC")).withNano(0);
 
             // Gerar o token JWT

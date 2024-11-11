@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 
 import br.edu.utfpr.farmlogistic.model.Person;
 import br.edu.utfpr.farmlogistic.repository.PersonRepository;
-//import br.edu.utfpr.todo.model.Person;
-//import br.edu.utfpr.todo.repository.PersonRepository;
 import jakarta.transaction.Transactional;
 
 @Service
