@@ -1,0 +1,12 @@
+@URL = http://localhost:8080/animals
+
+POST http://localhost:8080/farm/animal
+Content-Type: application/json
+
+{
+    "peso": 500.5,
+    "raca": "Nelore",
+    "alimentaTipo": "Pasto",
+    "idade": 5,
+    "saudeStatus": "Saudável"
+}
