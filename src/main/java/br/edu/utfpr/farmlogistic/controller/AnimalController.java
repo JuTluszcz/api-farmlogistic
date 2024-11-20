@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.utfpr.farmlogistic.model.Animal;
 import br.edu.utfpr.farmlogistic.repository.AnimalRepository;
+
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController

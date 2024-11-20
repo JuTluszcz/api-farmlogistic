@@ -1,8 +1,16 @@
 package br.edu.utfpr.farmlogistic.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "Modelo que representa a alimentação de um animal")
 public class Alimentacao {
+    @Schema(description = "Tipo de alimentação fornecido ao animal", example = "Ração Seca")
     private String tipoAlimentacao;
+    
+    @Schema(description = "Quantidade de alimento fornecido em quilos", example = "2.5")
     private double quantidade;
+    
+    @Schema(description = "Período de alimentação (ex: manhã, tarde, noite)", example = "Manhã")
     private String periodo;
 
     // Construtores
