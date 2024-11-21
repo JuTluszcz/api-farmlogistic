@@ -1,9 +1,21 @@
 package br.edu.utfpr.farmlogistic.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Entity
+@Table(name = "animal")
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 @ApiModel(description = "Modelo que representa um animal na fazenda")
-public class Animal {
+public class Animal extends BasicEntity {
     @ApiModelProperty(value = "Peso do animal em quilogramas", example = "20.5")
     private double peso;
     
@@ -26,45 +38,4 @@ public class Animal {
         this.idade = idade;
         this.estadoSaude = estadoSaude;
     }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
-
-    public String getRaca() {
-        return raca;
-    }
-
-    public void setRaca(String raca) {
-        this.raca = raca;
-    }
-
-    public String getTipoAlimentacao() {
-        return tipoAlimentacao;
-    }
-
-    public void setTipoAlimentacao(String tipoAlimentacao) {
-        this.tipoAlimentacao = tipoAlimentacao;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getEstadoSaude() {
-        return estadoSaude;
-    }
-
-    public void setEstadoSaude(String estadoSaude) {
-        this.estadoSaude = estadoSaude;
-    }
-
 }

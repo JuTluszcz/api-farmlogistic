@@ -1,7 +1,10 @@
-@URL = http://localhost:8080/animals
+@URL=http://localhost:8080/animals
 
-POST http://localhost:8080/farm/animal
+@token=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBUEkgYXV0aGVudGljYXRpb24iLCJpZCI6ImU1M2NkOTY0LWIxOTYtNDYwYy04NmI4LTg4Nzg1MzA5YTZlYyIsInVzZXJuYW1lIjoic2FzYXNhc2FAZ21haWwuY29tIiwiaWF0IjoxNzMyMjIwMzQ5LCJleHAiOjE3MzIyMjM5NDksImlzcyI6IlVURlBSIn0.xNPrUKhMNuy8KJq3MhOLNdW_M-Rj68lAZ9rwKsDiPUM
+
+POST {{URL}}
 Content-Type: application/json
+Authorization: {{token}}
 
 {
     "peso": 500.5,
@@ -10,3 +13,8 @@ Content-Type: application/json
     "idade": 5,
     "saudeStatus": "Saudável"
 }
+
+
+### get all
+GET {{URL}}
+Authorization: {{token}}

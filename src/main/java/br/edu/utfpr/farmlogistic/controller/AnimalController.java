@@ -14,31 +14,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.utfpr.farmlogistic.model.Animal;
 import br.edu.utfpr.farmlogistic.repository.AnimalRepository;
-
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/animals")
-
 public class AnimalController {
     
      @Autowired
     private AnimalRepository animalRepository;
 
-    // Criar um novo animal
+   
     @PostMapping
     public ResponseEntity<Animal> createAnimal(@RequestBody Animal animal) {
+        System.out.println(animal);
         Animal savedAnimal = animalRepository.save(animal);
         return ResponseEntity.status(201).body(savedAnimal);
     }
 
-    // Listar todos os animais
     @GetMapping
     public List<Animal> getAllAnimals() {
         return animalRepository.findAll();
     }
 
-    // Buscar um animal por ID
+
     @GetMapping("/{id}")
     public ResponseEntity<Animal> getAnimalById(@PathVariable Long id) {
         return animalRepository.findById(id)
@@ -46,7 +44,7 @@ public class AnimalController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // Atualizar um animal
+    
     @PutMapping("/{id}")
     public ResponseEntity<Animal> updateAnimal(@PathVariable Long id, @RequestBody Animal updatedAnimal) {
         return animalRepository.findById(id).map(animal -> {
@@ -60,7 +58,7 @@ public class AnimalController {
         }).orElse(ResponseEntity.notFound().build());
     }
 
-    // Deletar um animal
+ 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteAnimal(@PathVariable Long id) {
         if (animalRepository.existsById(id)) {
