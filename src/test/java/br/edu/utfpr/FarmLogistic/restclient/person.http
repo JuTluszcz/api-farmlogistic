@@ -16,9 +16,9 @@ POST {{URL}}
 Content-Type: application/json
 
 {
-    "name": "Juca",
-    "email": "juca@gmail.com",
-    "password": "1234",
+    "name": "Isadora",
+    "email": "sasasasa@gmail.com",
+    "password": "12345",
     "birth": "2000-05-05"
 }
 

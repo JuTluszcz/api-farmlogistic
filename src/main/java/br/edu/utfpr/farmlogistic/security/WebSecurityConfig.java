@@ -58,8 +58,9 @@ public class WebSecurityConfig {
                 // .requestMatchers(HttpMethod.GET, "/").permitAll()
                  .requestMatchers(HttpMethod.POST, "/auth").permitAll()
                  .requestMatchers(HttpMethod.POST, "/person").permitAll()
-                 .anyRequest().authenticated());
-                //.anyRequest().permitAll());
+                 .requestMatchers( "/animals/**").permitAll()
+                // .anyRequest().authenticated());
+                .anyRequest().permitAll());
 
         // Add JWT token filter
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
